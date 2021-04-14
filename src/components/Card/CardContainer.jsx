@@ -7,7 +7,6 @@ const CardContainer = () => {
 
   return (
     <div>
-      CONTENEDOR DE CARD
       <Card />
     </div>
   );
