@@ -17,8 +17,8 @@ const Home = (props) => {
       <Navbar 
         setMySearch={ setMySearch }
       />
-      <CssBaseline />
-      <Container  component="div" style={{ backgroundColor: '#cfe8fc' }} fixed>
+      {/* <CssBaseline /> */}
+      <Container  component="div" fixed>
         <CardContainer 
           mysearch={ mysearch }
         />

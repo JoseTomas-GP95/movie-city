@@ -19,6 +19,11 @@ export default makeStyles((theme) => ({
       display: 'block',
     },
   },
+  link: {
+    color: 'white',
+    textDecoration: 'none'
+
+  },
   search: {
     position: 'absolute',
     right: '10%',

@@ -12,19 +12,6 @@ const CardContainer = (props) => {
 
   const search = props.mysearch;
 
-  // useEffect(() => {
-
-  //     console.log("ENTRANDO")
-  //     setTrends([])
-
-  //     fetch(`https://api.themoviedb.org/3/search/movie?api_key=99098b67dde5607759393b5059860efe&query=${ search }&page=1`)
-  //     .then((response) => response.json())
-  //     .then((data) => setTrends(data.results));
-
-  //   }, []);
-
-
-  // AQUI TENGO UN PROBLEMA PARA SALIR DE LOS POPULARES Y PASAR A LO QUE BUSCO 
   useEffect(() => {
 
     if (search !== null && search !== undefined && search !== "") {
@@ -44,7 +31,7 @@ const CardContainer = (props) => {
 
   }, [search]);
 
-
+  console.log(trends)
 
   return (
     <div>
@@ -57,9 +44,10 @@ const CardContainer = (props) => {
         { 
           trends.map((movie) => (
             <Card
-              title={movie.title}
-              description={movie.overview}
-              poster={movie.poster_path}
+              title={ movie.title }
+              description={ movie.overview }
+              poster={ movie.poster_path }
+              id={ movie.id }
             />
           ))}
       </Container>

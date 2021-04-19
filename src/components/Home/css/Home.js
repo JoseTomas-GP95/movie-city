@@ -10,7 +10,7 @@ export default makeStyles(() => ({
     // marginBottom: "5%"
   },
   popular: {
-    color: "red",
+    // color: "",
     display: "block",
     flexWrap: "wrap",
 

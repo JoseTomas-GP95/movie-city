@@ -4,11 +4,9 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
-import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 import useStyles from "./css/Navbar";
 
@@ -18,8 +16,8 @@ export default function SearchAppBar(props) {
   const [search, setSearch] = useState("");
 
   const sendSearch = () => {
-    props.setMySearch(search)
-    setSearch("")
+    props.setMySearch(search);
+    setSearch("");
   };
 
   return (
@@ -32,13 +30,14 @@ export default function SearchAppBar(props) {
             color="inherit"
             aria-label="open drawer"
           ></IconButton>
-          <Typography className={classes.title} variant="h4" noWrap>
-            Movie City
-          </Typography>
-
+            <Typography className={classes.title} variant="h4" noWrap>
+          <Link className={classes.link} to="/">
+              Movie City
+          </Link>
+            </Typography>
           <div className={classes.search}>
             <InputBase
-              value={ search }
+              value={search}
               onChange={(e) => setSearch(e.target.value)}
               name="search"
               placeholder="Buscar..."

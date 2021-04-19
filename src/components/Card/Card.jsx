@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import { Link } from "react-router-dom";
+
 /* ------------------------------- MATERIAL UI ------------------------------ */
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -11,33 +13,35 @@ import Typography from "@material-ui/core/Typography";
 
 import useStyles from "./css/Card";
 
-const path = 'https://image.tmdb.org/t/p/original'
+const path = "https://image.tmdb.org/t/p/original";
 
-export default function MediaCard({ title, description, poster }) {
+export default function MediaCard({ title, description, poster, id }) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={ classes.media }
-          image={ path + poster }
-          title="movie cover"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            { title }
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            { description }
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions className="col-md-12">
-        <Button size="small" color="primary">
-          Ver más
-        </Button>
-      </CardActions>
+      <Link to={`/movie/${ id }`}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={path + poster}
+            title="movie cover"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {title}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions className="col-md-12">
+          <Button size="small" color="primary">
+            View More
+          </Button>
+        </CardActions>
+      </Link>
     </Card>
   );
 }
