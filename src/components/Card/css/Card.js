@@ -3,12 +3,16 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles(() => ({
   
   root: {
-    maxWidth: 345,
+    maxWidth: 400,
+    maxHeight: '100%',
     marginTop: '12%',
     marginBottom: '12%',
+    zoom: '60%'
   },
   media: {
-    height: 140,
+    width: 'auto',
+    height: '100vh'
+
   },
 
 }));

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 /* ------------------------------- MATERIAL UI ------------------------------ */
 import Card from "@material-ui/core/Card";
@@ -9,27 +9,27 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-import baseDatos from "../../db";
-
 import useStyles from "./css/Card";
 
-export default function MediaCard() {
+const path = 'https://image.tmdb.org/t/p/original'
+
+export default function MediaCard({ title, description, poster }) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
-          className={classes.media}
-          image={baseDatos.img}
-          title="Contemplative Reptile"
+          className={ classes.media }
+          image={ path + poster }
+          title="movie cover"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {baseDatos.name}
+            { title }
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {baseDatos.description}
+            { description }
           </Typography>
         </CardContent>
       </CardActionArea>
