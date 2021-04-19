@@ -6,6 +6,9 @@ export default makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  searchButton: {
+    cursor: 'pointer'
+  },
   menuButton: {
     marginRight: theme.spacing(20),
   },
@@ -17,7 +20,7 @@ export default makeStyles((theme) => ({
     },
   },
   search: {
-    position: 'relative',
+    position: 'absolute',
     right: '10%',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
@@ -32,13 +35,15 @@ export default makeStyles((theme) => ({
     },
   },
   searchIcon: {
-    padding: theme.spacing(0, 2),
     height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
+    // position: 'absolute',
+    // pointerEvents: 'none',
     display: 'flex',
-    alignItems: 'center',
+    flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
+    left: '30%'
   },
   inputRoot: {
     color: 'inherit',

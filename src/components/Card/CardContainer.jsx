@@ -5,38 +5,63 @@ import Container from "@material-ui/core/Container";
 import { Card } from "../Card";
 import useStyles from "./css/CardContainer";
 
-const CardContainer = () => {
+const CardContainer = (props) => {
   const classes = useStyles();
 
   const [trends, setTrends] = useState([]);
 
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/trending/movie/week?api_key=99098b67dde5607759393b5059860efe`
-    )
-      .then((response) => response.json())
-      .then((data) => setTrends(data.results));
-  }, []);
+  const search = props.mysearch;
 
-  console.log(trends);
+  // useEffect(() => {
+
+  //     console.log("ENTRANDO")
+  //     setTrends([])
+
+  //     fetch(`https://api.themoviedb.org/3/search/movie?api_key=99098b67dde5607759393b5059860efe&query=${ search }&page=1`)
+  //     .then((response) => response.json())
+  //     .then((data) => setTrends(data.results));
+
+  //   }, []);
+
+
+  // AQUI TENGO UN PROBLEMA PARA SALIR DE LOS POPULARES Y PASAR A LO QUE BUSCO 
+  useEffect(() => {
+
+    if (search !== null && search !== undefined && search !== "") {
+      fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=99098b67dde5607759393b5059860efe&query=${search}&page=1`
+      )
+        .then((response) => response.json())
+        .then((data) => setTrends(data.results));
+        
+      } else {
+
+        fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=99098b67dde5607759393b5059860efe`)
+        .then((response) => response.json())
+        .then((data) => setTrends(data.results));
+
+      }
+
+  }, [search]);
+
+
 
   return (
     <div>
       <Container
-        className={ classes.Container }
+        className={classes.Container}
         component="div"
         style={{ backgroundColor: "#cfe8fc" }}
         fixed
       >
-        {
-        trends.map( movie => (
-          <Card 
-            title={ movie.title } 
-            description={ movie.overview } 
-            poster={ movie.poster_path }
-          />
-      ))
-      }
+        { 
+          trends.map((movie) => (
+            <Card
+              title={movie.title}
+              description={movie.overview}
+              poster={movie.poster_path}
+            />
+          ))}
       </Container>
     </div>
   );

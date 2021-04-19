@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 
@@ -8,15 +8,20 @@ import { Footer } from '../Footer'
 
 import useStyles from "./css/Home";
 
-const Home = () => {
+const Home = (props) => {
   const classes = useStyles();
+  const [ mysearch, setMySearch ] = useState('')
 
   return (
     <div>
-      <Navbar />
+      <Navbar 
+        setMySearch={ setMySearch }
+      />
       <CssBaseline />
       <Container  component="div" style={{ backgroundColor: '#cfe8fc' }} fixed>
-        <CardContainer />
+        <CardContainer 
+          mysearch={ mysearch }
+        />
       </Container>
       <Footer />
     </div>
