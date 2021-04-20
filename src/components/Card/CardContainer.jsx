@@ -5,41 +5,32 @@ import Container from "@material-ui/core/Container";
 import { Card } from "../Card";
 import useStyles from "./css/CardContainer";
 
-const CardContainer = (props) => {
+const CardContainer = ({ mysearch, movies }) => {
   const classes = useStyles();
 
-  const [trends, setTrends] = useState([]);
+  const search = mysearch;
 
-  const search = props.mysearch;
+  // NOS MUDAMOS A HOME
+  // useEffect(() => {
+      
+  //   fetch(`https://api.themoviedb.org/3/movie/popular?api_key=99098b67dde5607759393b5059860efe&language=en-US&page=1`)
+  //   .then((response) => response.json())
 
-  useEffect(() => {
+  //   .then((data) => setTrends(data.results));
 
-    if (search !== null && search !== undefined && search !== "") {
-      fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=99098b67dde5607759393b5059860efe&query=${search}&page=1`
-      )
-        .then((response) => response.json())
-        .then((data) => setTrends(data.results));
-        
-      } else {
+  // }, []);
 
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=99098b67dde5607759393b5059860efe&language=en-US&page=1`)
-        // fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=99098b67dde5607759393b5059860efe`)
-        .then((response) => response.json())
+  // const Search = () => {
 
-        // .then((data) => console.log(data, "DATA"));
-        .then((data) => {
-          const result = data.results.filter(movie => {
-            return movie.vote_average >= 8 && movie.vote_average <= 10
-          })
-          setTrends(result)
-        });
+  //   fetch(
+  //     `https://api.themoviedb.org/3/search/movie?api_key=99098b67dde5607759393b5059860efe&query=${search}&page=1`
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => setTrends(data.results));
 
-      }
+  // }
 
-  }, [search]);
-
-  console.log(trends)
+  console.log( movies, "POPULAR" )
 
   return (
     <div>
@@ -50,7 +41,7 @@ const CardContainer = (props) => {
         fixed
       >
         { 
-          trends.map((movie) => (
+          movies && movies.map((movie) => (
             <Card
               title={ movie.title }
               description={ movie.overview }

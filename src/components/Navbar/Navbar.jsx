@@ -10,17 +10,16 @@ import { Link } from "react-router-dom";
 
 import useStyles from "./css/Navbar";
 
-import { Calification } from '../Calification';
-
 export default function SearchAppBar(props) {
   const classes = useStyles();
 
   const [search, setSearch] = useState("");
 
-  const sendSearch = () => {
-    props.setMySearch(search);
-    setSearch("");
-  };
+  const sendSearch = (search) => {
+
+    props.SearchMovie(search)
+    setSearch("")
+  }
 
   return (
     <div className={classes.root}>
@@ -51,12 +50,7 @@ export default function SearchAppBar(props) {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-
-          <IconButton>
-            <Calification />
-          </IconButton>
-
-          <div onClick={sendSearch} className={classes.searchIcon}>
+          <div onClick={ () => sendSearch(search) } className={classes.searchIcon}>
             <IconButton>
               <SearchIcon />
             </IconButton>

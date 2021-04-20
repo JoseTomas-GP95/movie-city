@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import StarIcon from '@material-ui/icons/Star';
 
 import Radio from "@material-ui/core/Radio";
 
-const Calification = () => {
+const Calification = ( { SearchCalification } ) => {
   const [calification, setCalification] = useState(0);
 
   const getCalification = (myCalification) => {
@@ -10,6 +11,7 @@ const Calification = () => {
       setCalification(0);
     } else {
       setCalification(myCalification);
+      SearchCalification(myCalification);
     }
   };
 
@@ -23,8 +25,8 @@ const Calification = () => {
           calification === 2 ||
           calification === 1
         }
-        // checkedIcon={useWings}
-        // icon={useWings}
+        checkedIcon={ <StarIcon /> }
+        icon={ <StarIcon /> }
         onClick={() => getCalification(1)}
         name="calification"
         value={1}
@@ -37,8 +39,8 @@ const Calification = () => {
           calification === 3 ||
           calification === 2
         }
-        // checkedIcon={useWings}
-        // icon={useWings}
+        checkedIcon={ <StarIcon /> }
+        icon={ <StarIcon /> }
         onClick={() => getCalification(2)}
         name="calification"
         value={2}
@@ -46,8 +48,8 @@ const Calification = () => {
       />
       <Radio
         checked={calification === 5 || calification === 4 || calification === 3}
-        // checkedIcon={useWings}
-        // icon={useWings}
+        checkedIcon={ <StarIcon /> }
+        icon={ <StarIcon /> }
         onClick={() => getCalification(3)}
         name="calification"
         value={3}
@@ -55,8 +57,8 @@ const Calification = () => {
       />
       <Radio
         checked={calification === 5 || calification === 4}
-        // checkedIcon={useWings}
-        // icon={useWings}
+        checkedIcon={ <StarIcon /> }
+        icon={ <StarIcon /> }
         onClick={() => getCalification(4)}
         name="calification"
         value={4}
@@ -64,8 +66,8 @@ const Calification = () => {
       />
       <Radio
         checked={calification === 5}
-        // checkedIcon={useWings}
-        // icon={useWings}
+        checkedIcon={ <StarIcon /> }
+        icon={ <StarIcon /> }
         onClick={() => getCalification(5)}
         name="calification"
         value={5}
