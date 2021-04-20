@@ -23,9 +23,17 @@ const CardContainer = (props) => {
         
       } else {
 
-        fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=99098b67dde5607759393b5059860efe`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=99098b67dde5607759393b5059860efe&language=en-US&page=1`)
+        // fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=99098b67dde5607759393b5059860efe`)
         .then((response) => response.json())
-        .then((data) => setTrends(data.results));
+
+        // .then((data) => console.log(data, "DATA"));
+        .then((data) => {
+          const result = data.results.filter(movie => {
+            return movie.vote_average >= 8 && movie.vote_average <= 10
+          })
+          setTrends(result)
+        });
 
       }
 

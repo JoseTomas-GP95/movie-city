@@ -5,14 +5,19 @@ export default makeStyles(() => ({
   root: {
     maxWidth: 400,
     maxHeight: '100%',
-    marginTop: '12%',
-    marginBottom: '12%',
-    zoom: '60%'
+    marginTop: '2%',
+    marginBottom: '5%',
+    zoom: '75%'
+  },
+  description: {
+    fontSize: '160%',
   },
   media: {
     width: 'auto',
     height: '100vh'
-
+  },
+  link: {
+    textDecoration: 'none'
   },
 
 }));

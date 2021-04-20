@@ -20,7 +20,7 @@ export default function MediaCard({ title, description, poster, id }) {
 
   return (
     <Card className={classes.root}>
-      <Link to={`/movie/${ id }`}>
+      <Link className={classes.link} to={`/movie/${ id }`}>
         <CardActionArea>
           <CardMedia
             className={classes.media}
@@ -31,13 +31,13 @@ export default function MediaCard({ title, description, poster, id }) {
             <Typography gutterBottom variant="h5" component="h2">
               {title}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography className={classes.description} variant="body2" color="textSecondary" component="p">
               {description}
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions className="col-md-12">
-          <Button size="small" color="primary">
+          <Button size="large" color="primary">
             View More
           </Button>
         </CardActions>
