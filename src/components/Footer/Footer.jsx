@@ -3,6 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 import useStyles from "./css/Footer";
 
@@ -16,13 +17,23 @@ export default function Footer() {
           <Typography>
             <a
               className={classes.link}
+              target="_blank"
               href="https://www.linkedin.com/in/josetgp/"
             >
               © José Tomas González 2021
             </a>
           </Typography>
+          <Typography>
+            <a
+              className={classes.link}
+              target="_blank"
+              href="https://github.com/JoseTomas-GP95/movie-city"
+            >
+              Repository on <GitHubIcon />
+            </a>
+          </Typography>
           <Typography variant="body1" color="inherit">
-            Hecho con 💛💙❤️
+            made with 💛💙❤️
           </Typography>
         </Toolbar>
       </Container>

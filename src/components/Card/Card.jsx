@@ -12,6 +12,7 @@ import { styled } from "@material-ui/core/styles";
 import { compose, spacing, palette } from "@material-ui/system";
 import HowToVoteIcon from "@material-ui/icons/HowToVote";
 import StarsIcon from "@material-ui/icons/Stars";
+import PageviewIcon from '@material-ui/icons/Pageview';
 
 import useStyles from "./css/Card";
 
@@ -19,7 +20,7 @@ const path = "https://image.tmdb.org/t/p/original";
 
 const Box = styled("div")(compose(spacing, palette));
 
-export default function MediaCard({ title, average, vote, poster, id }) {
+export default function MediaCard({ title, average, vote, poster, id, searchType }) {
   const classes = useStyles();
 
   return (
@@ -41,13 +42,14 @@ export default function MediaCard({ title, average, vote, poster, id }) {
               color="textSecondary"
               component="p"
             >
-              {/* aqui van a ir el average y la otra cosa */}
               <Box color="white" bgcolor="blue" p={2}>
                 <HowToVoteIcon /> Number of voters: {vote}
               </Box>
               <Box color="white" bgcolor="purple" p={2}>
+                <PageviewIcon /> {searchType} <br/>
                 <StarsIcon /> Average votes: {average}
               </Box>
+
             </Typography>
           </CardContent>
         </CardActionArea>

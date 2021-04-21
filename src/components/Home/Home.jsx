@@ -12,10 +12,12 @@ import useStyles from "./css/Home";
 const Home = () => {
   // const classes = useStyles();
   const [movies, setMovies] = useState([]);
+  const [searchType, setSearchType] = useState("");
   const [mysearch, setMySearch] = useState("");
   const [calificationHome, setCalificationHome] = useState(0);
 
   useEffect(() => {
+    setSearchType("For Popular")
     fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=99098b67dde5607759393b5059860efe&language=en-US&page=1`
     )
@@ -24,6 +26,8 @@ const Home = () => {
   }, []);
 
   const SearchMovie = (word) => {
+    setSearchType("For Name")
+
     if (!word) {
       fetch(
         `https://api.themoviedb.org/3/movie/popular?api_key=99098b67dde5607759393b5059860efe&language=en-US&page=1`
@@ -40,6 +44,8 @@ const Home = () => {
   };
 
   const SearchCalification = (calification) => {
+    setSearchType("For Calification")
+
     if (calification === calificationHome) {
       setCalificationHome(0);
     } else {
@@ -99,6 +105,7 @@ const Home = () => {
       </IconButton>
       <Container component="div" fixed>
         <CardContainer
+          searchType={searchType}
           movies={movies}
           mysearch={mysearch}
           calificationHome={calificationHome}

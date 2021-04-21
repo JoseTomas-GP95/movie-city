@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 
-import { Calification } from "../Calification"
+import { Calification } from "../Calification";
 
 import { Link } from "react-router-dom";
 
@@ -22,6 +22,10 @@ export default function SearchAppBar(props) {
     setSearch("");
   };
 
+  let isMovie = window.location.href.split("/");
+
+  console.log(window.location.href);
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -33,36 +37,40 @@ export default function SearchAppBar(props) {
             aria-label="open drawer"
           ></IconButton>
           <Typography className={classes.title} variant="h4" noWrap>
-          <Link className={classes.link} to="/">
+            <Link className={classes.link} to="/">
               Movie City
             </Link>
           </Typography>
 
-          <Calification 
-            setCalificationHome={props.setCalificationHome}
-            SearchCalification={props.SearchCalification}
-          />
+          {isMovie.length > 2 && isMovie[3] === "movie" ? null : (
+            <>
+              <Calification
+                setCalificationHome={props.setCalificationHome}
+                SearchCalification={props.SearchCalification}
+              />
 
-          <div className={classes.search}>
-            <InputBase
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              name="search"
-              placeholder="Buscar..."
-              type="search"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
-          </div>
-          <div 
-              onClick={() => sendSearch(search)}
-              className={classes.searchIcon}
-            >
-              <SearchIcon />
-            </div>
+              <div className={classes.search}>
+                <InputBase
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  name="search"
+                  placeholder="Buscar..."
+                  type="search"
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                  }}
+                  inputProps={{ "aria-label": "search" }}
+                />
+              </div>
+              <div
+                onClick={() => sendSearch(search)}
+                className={classes.searchIcon}
+              >
+                <SearchIcon />
+              </div>
+            </>
+          )}
         </Toolbar>
       </AppBar>
     </div>

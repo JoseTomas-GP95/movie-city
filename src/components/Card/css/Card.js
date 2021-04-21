@@ -4,8 +4,6 @@ export default makeStyles(() => ({
   root: {
     maxWidth: 350,
     maxHeight: "80%",
-    // marginTop: "2%",
-    // marginBottom: "5%",
     margin: "2.1%",
     zoom: "70%",
     transition: "1s",

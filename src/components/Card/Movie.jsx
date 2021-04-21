@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import { MovieCard } from "./";
 
 import { Navbar } from "../Navbar";
+import { Footer } from "../Footer";
 
 import useStyles from "./css/Movie";
 
@@ -24,7 +25,7 @@ export default function Movie(props) {
   }, []);
 
   return (
-    <div className={classes.root}>
+    <div>
       <Navbar />
       <Grid item lg={12}>
         <Paper className={classes.paper}>
@@ -42,21 +43,9 @@ export default function Movie(props) {
               genres={movieId.genres}
             />
           </div>
-          <Grid className={classes.root} lg={12}>
-            <h1>Categories</h1>
-            <Grid item>
-              <Grid item lg={12} className={classes.image}>
-                {movieId.genres &&
-                  movieId.genres.map((category) => (
-                    <div className={classes.root2}>
-                      <Button className={classes.tag}>{category.name}</Button>
-                    </div>
-                  ))}
-              </Grid>
-            </Grid>
-          </Grid>
         </Paper>
       </Grid>
+      <Footer />
     </div>
   );
 }

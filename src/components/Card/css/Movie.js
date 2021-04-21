@@ -1,12 +1,12 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles(({ spacing, palette }) => ({
-  root2: {
-    display: "flex",
+  root: {
+    flex: 1,
     flexDirection: "row",
-    width: "50vw",
-    height: "10vh",
+    height: "auto",
     padding: 0,
+    backgroundColor: "red"
   },
   tag: {
     flex: 1,
