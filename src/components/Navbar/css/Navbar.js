@@ -4,11 +4,8 @@ export default makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  searchButton: {
-    cursor: "pointer",
-  },
   menuButton: {
-    marginRight: theme.spacing(20),
+    marginRight: theme.spacing(2),
   },
   title: {
     flexGrow: 1,
@@ -22,8 +19,7 @@ export default makeStyles((theme) => ({
     textDecoration: "none",
   },
   search: {
-    position: "absolute",
-    right: "10%",
+    position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     "&:hover": {
@@ -33,7 +29,7 @@ export default makeStyles((theme) => ({
     width: "100%",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(1),
-      width: "30%",
+      width: "auto",
     },
   },
   searchIcon: {
@@ -43,20 +39,21 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     cursor: "pointer",
-    left: "30%",
+    padding: theme.spacing(0, 2),
   },
   inputRoot: {
     color: "inherit",
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
       width: "12ch",
       "&:focus": {
-        width: "100ch",
+        width: "20ch",
       },
     },
   },

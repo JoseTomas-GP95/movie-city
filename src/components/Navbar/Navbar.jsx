@@ -31,7 +31,7 @@ export default function SearchAppBar(props) {
             aria-label="open drawer"
           ></IconButton>
           <Typography className={classes.title} variant="h4" noWrap>
-            <Link className={classes.link} to="/">
+          <Link className={classes.link} to="/">
               Movie City
             </Link>
           </Typography>
@@ -49,14 +49,12 @@ export default function SearchAppBar(props) {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          <div
-            onClick={() => sendSearch(search)}
-            className={classes.searchIcon}
-          >
-            <IconButton>
+          <div 
+              onClick={() => sendSearch(search)}
+              className={classes.searchIcon}
+            >
               <SearchIcon />
-            </IconButton>
-          </div>
+            </div>
         </Toolbar>
       </AppBar>
     </div>
