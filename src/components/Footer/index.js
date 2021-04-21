@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import FooterExport from './Footer';
-
+import FooterExport from "./Footer";
 
 export function Footer(props) {
-
-  return <FooterExport {...props}/>;
-  
+  return <FooterExport {...props} />;
 }
-

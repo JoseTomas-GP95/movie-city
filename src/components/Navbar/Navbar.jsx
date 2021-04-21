@@ -16,10 +16,9 @@ export default function SearchAppBar(props) {
   const [search, setSearch] = useState("");
 
   const sendSearch = (search) => {
-
-    props.SearchMovie(search)
-    setSearch("")
-  }
+    props.SearchMovie(search);
+    setSearch("");
+  };
 
   return (
     <div className={classes.root}>
@@ -31,11 +30,11 @@ export default function SearchAppBar(props) {
             color="inherit"
             aria-label="open drawer"
           ></IconButton>
-            <Typography className={classes.title} variant="h4" noWrap>
-          <Link className={classes.link} to="/">
+          <Typography className={classes.title} variant="h4" noWrap>
+            <Link className={classes.link} to="/">
               Movie City
-          </Link>
-            </Typography>
+            </Link>
+          </Typography>
           <div className={classes.search}>
             <InputBase
               value={search}
@@ -50,7 +49,10 @@ export default function SearchAppBar(props) {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          <div onClick={ () => sendSearch(search) } className={classes.searchIcon}>
+          <div
+            onClick={() => sendSearch(search)}
+            className={classes.searchIcon}
+          >
             <IconButton>
               <SearchIcon />
             </IconButton>

@@ -1,36 +1,21 @@
-// import React, { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom";
 
-/* ------------------------------- MATERIAL UI ------------------------------ */
-// import Card from "@material-ui/core/Card";
-// import CardActionArea from "@material-ui/core/CardActionArea";
-// import CardActions from "@material-ui/core/CardActions";
-// import CardContent from "@material-ui/core/CardContent";
-// import CardMedia from "@material-ui/core/CardMedia";
-// import Button from "@material-ui/core/Button";
-// import Typography from "@material-ui/core/Typography";
-
-
-import React from 'react';
-import Color from 'color';
-import { makeStyles } from '@material-ui/core/styles';
-import NoSsr from '@material-ui/core/NoSsr';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import { useFourThreeCardMediaStyles } from '@mui-treasury/styles/cardMedia/fourThree';
-
-// import useStyles from "./css/Card";
+import React from "react";
+import Color from "color";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import { useFourThreeCardMediaStyles } from "@mui-treasury/styles/cardMedia/fourThree";
 
 const path = "https://image.tmdb.org/t/p/original";
 
 const useGridStyles = makeStyles(({ breakpoints }) => ({
   root: {
-    width: '10px',
+    width: "10px",
     [breakpoints.up("md")]: {
       justifyContent: "center",
       flexWrap: "wrap",
@@ -41,10 +26,10 @@ const useGridStyles = makeStyles(({ breakpoints }) => ({
 const useStyles = makeStyles(() => ({
   root: {
     maxWidth: 400,
-    maxHeight: '100%',
-    marginTop: '12%',
-    marginBottom: '12%',
-    zoom: '60%'
+    maxHeight: "100%",
+    marginTop: "12%",
+    marginBottom: "12%",
+    zoom: "60%",
   },
   actionArea: {
     borderRadius: 16,
@@ -86,15 +71,14 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-
 const CustomCard = ({ classes, image, title, subtitle }) => {
   const mediaStyles = useFourThreeCardMediaStyles();
   return (
-    <CardActionArea className={classes.actionArea, classes.root}>
+    <CardActionArea className={(classes.actionArea, classes.root)}>
       <Card className={classes.card}>
         <CardMedia classes={mediaStyles} image={image} />
         <CardContent className={classes.content}>
-          <Typography className={classes.title} variant={'h2'}>
+          <Typography className={classes.title} variant={"h2"}>
             {title}
           </Typography>
           <Typography className={classes.subtitle}>{subtitle}</Typography>
@@ -103,7 +87,6 @@ const CustomCard = ({ classes, image, title, subtitle }) => {
     </CardActionArea>
   );
 };
-
 
 export const SolidGameCardDemo = React.memo(function SolidGameCard({
   title,

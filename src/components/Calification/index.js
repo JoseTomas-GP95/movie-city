@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import CalificationExport from './Calification';
-
+import CalificationExport from "./Calification";
 
 export function Calification(props) {
-
-  return <CalificationExport {...props}/>;
-  
+  return <CalificationExport {...props} />;
 }
-

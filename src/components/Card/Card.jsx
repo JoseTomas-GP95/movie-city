@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { Link } from "react-router-dom";
 
@@ -20,7 +20,7 @@ export default function MediaCard({ title, description, poster, id }) {
 
   return (
     <Card className={classes.root}>
-      <Link className={classes.link} to={`/movie/${ id }`}>
+      <Link className={classes.link} to={`/movie/${id}`}>
         <CardActionArea>
           <CardMedia
             className={classes.media}
@@ -31,7 +31,12 @@ export default function MediaCard({ title, description, poster, id }) {
             <Typography gutterBottom variant="h5" component="h2">
               {title}
             </Typography>
-            <Typography className={classes.description} variant="body2" color="textSecondary" component="p">
+            <Typography
+              className={classes.description}
+              variant="body2"
+              color="textSecondary"
+              component="p"
+            >
               {description}
             </Typography>
           </CardContent>

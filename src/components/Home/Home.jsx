@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 
 import { CardContainer } from "../Card";
@@ -11,7 +10,7 @@ import IconButton from "@material-ui/core/IconButton";
 import useStyles from "./css/Home";
 
 const Home = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
   const [movies, setMovies] = useState([]);
   const [mysearch, setMySearch] = useState("");
   const [calificationHome, setCalificationHome] = useState(0);
@@ -41,11 +40,10 @@ const Home = () => {
   };
 
   const SearchCalification = (calification) => {
-
-    if(calification === calificationHome) {
+    if (calification === calificationHome) {
       setCalificationHome(0);
     } else {
-      setCalificationHome(calification)
+      setCalificationHome(calification);
     }
 
     if (calification > 0) {
@@ -96,7 +94,6 @@ const Home = () => {
           SearchCalification={SearchCalification}
         />
       </IconButton>
-      {/* <CssBaseline /> */}
       <Container component="div" fixed>
         <CardContainer
           movies={movies}
