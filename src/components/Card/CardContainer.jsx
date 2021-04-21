@@ -5,7 +5,7 @@ import Container from "@material-ui/core/Container";
 import { Card } from "../Card";
 import useStyles from "./css/CardContainer";
 
-const CardContainer = ({ movies, searchType }) => {
+const CardContainer = ({ movies, searchType, videoHome }) => {
   const classes = useStyles();
 
   return (
@@ -19,6 +19,7 @@ const CardContainer = ({ movies, searchType }) => {
         {movies &&
           movies.map((movie) => (
             <Card
+              videoHome={videoHome}
               searchType={searchType}
               title={movie.title}
               description={movie.overview}

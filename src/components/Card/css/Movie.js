@@ -40,4 +40,10 @@ export default makeStyles(({ spacing, palette }) => ({
     display: "flex",
     padding: 10,
   },
+  trailer: {
+    width: "78%",
+    height: "100vh",
+    position: "relative",
+    bottom: "45rem"
+  },
 }));

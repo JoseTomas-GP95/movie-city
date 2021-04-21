@@ -43,7 +43,7 @@ export default function MediaCard({ title, average, vote, poster, id, searchType
               component="p"
             >
               <Box color="white" bgcolor="blue" p={2}>
-                <HowToVoteIcon /> Number of voters: {vote}
+                <HowToVoteIcon /> Number of voters: {vote} <br />
               </Box>
               <Box color="white" bgcolor="purple" p={2}>
                 <PageviewIcon /> {searchType} <br/>

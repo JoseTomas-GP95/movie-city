@@ -4,13 +4,9 @@ import Container from "@material-ui/core/Container";
 import { CardContainer } from "../Card";
 import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
-import { Calification } from "../Calification";
 import IconButton from "@material-ui/core/IconButton";
 
-import useStyles from "./css/Home";
-
 const Home = () => {
-  // const classes = useStyles();
   const [movies, setMovies] = useState([]);
   const [searchType, setSearchType] = useState("");
   const [mysearch, setMySearch] = useState("");
@@ -96,7 +92,6 @@ const Home = () => {
       <Navbar 
         setMySearch={setMySearch} 
         SearchMovie={SearchMovie} 
-
         setCalificationHome={setCalificationHome}
         SearchCalification={SearchCalification}
       />

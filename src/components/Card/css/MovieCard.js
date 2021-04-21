@@ -29,4 +29,8 @@ export default makeStyles(() => ({
     filter: "alpha(opacity=100)",
     opacity: 0.2,
   },
+  link: {
+    color: "white",
+    textDecoration: "none",
+  },
 }));

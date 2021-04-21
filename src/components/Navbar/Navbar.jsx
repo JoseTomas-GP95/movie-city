@@ -22,9 +22,8 @@ export default function SearchAppBar(props) {
     setSearch("");
   };
 
-  let isMovie = window.location.href.split("/");
 
-  console.log(window.location.href);
+  let isMovie = window.location.href.split("/");
 
   return (
     <div className={classes.root}>

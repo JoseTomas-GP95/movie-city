@@ -1,3 +1,19 @@
+# Librerias instaladas
+
+## Material UI:
+Es una de las herramientas de maquetado que está pensado exactamente en React a la hora de darle estilo a un proyecto.
+
+## Mui-Treasury:
+También otra herramienta para el maquetado de componentes en react. La libreria de Material UI los menciona ya que se basan en componentes del propio material ui.
+
+## Bootstrap/React-Bootstrap/React-Player:
+Únicamente lo utilizo para hacer un modal, de resto todo está hecho con material ui. Hice el modal con esta libreria porque lo encontré un poco mas intuitivo. Y react player para la reproduccion de videos.
+
+## React-router/React-router-dom:
+Utilizado para crear las rutas de eseta página web
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

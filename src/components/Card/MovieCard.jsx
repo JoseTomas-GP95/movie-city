@@ -8,6 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { useCoverCardMediaStyles } from "@mui-treasury/styles/cardMedia/cover";
 import { useLightTopShadowStyles } from "@mui-treasury/styles/shadow/lightTop";
+import Button from "@material-ui/core/Button";
 
 import useStyles from "./css/MovieCard";
 
@@ -18,6 +19,8 @@ export const NewsCard2Demo = React.memo(function NewsCard2({
   description,
   title,
   originalUrl,
+  setIsOpen,
+  video,
 }) {
   const styles = useStyles();
   const mediaStyles = useCoverCardMediaStyles();
@@ -44,9 +47,16 @@ export const NewsCard2Demo = React.memo(function NewsCard2({
             <p>{description}</p>
           </Box>
           <Typography className={styles.cta} variant={"overline"}>
-            <a target="_blank" href={originalUrl}>
-              Explore
-            </a>
+            <Button variant="contained" color="secondary">
+              <a className={styles.link} target="_blank" href={originalUrl}>
+                Explore
+              </a>
+            </Button>
+            {video ? (
+              <Button variant="contained" color="primary">
+                <a onClick={() => setIsOpen(true)}>Trailer</a>
+              </Button>
+            ) : null}
           </Typography>
         </CardContent>
       </CardActionArea>
