@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 
+import { Calification } from "../Calification"
+
 import { Link } from "react-router-dom";
 
 import useStyles from "./css/Navbar";
@@ -35,6 +37,12 @@ export default function SearchAppBar(props) {
               Movie City
             </Link>
           </Typography>
+
+          <Calification 
+            setCalificationHome={props.setCalificationHome}
+            SearchCalification={props.SearchCalification}
+          />
+
           <div className={classes.search}>
             <InputBase
               value={search}

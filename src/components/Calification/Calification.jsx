@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import StarIcon from "@material-ui/icons/Star";
+import { styled } from "@material-ui/core/styles";
+import { compose, spacing, palette } from "@material-ui/system";
 
 import Radio from "@material-ui/core/Radio";
 
+import useStyles from "./css/Calification";
+
+const Box = styled("div")(compose(spacing, palette));
+
 const Calification = ({ SearchCalification }) => {
+  const classes = useStyles();
+
   const [calification, setCalification] = useState(0);
 
   const getCalification = (myCalification) => {
@@ -16,7 +24,8 @@ const Calification = ({ SearchCalification }) => {
   };
 
   return (
-    <div>
+    <Box className={classes.root} color="white"  p={2}>
+      <h3>Filter by average: </h3>
       <Radio
         checked={
           calification === 5 ||
@@ -73,7 +82,7 @@ const Calification = ({ SearchCalification }) => {
         value={5}
         inputProps={{ "aria-label": "5" }}
       />
-    </div>
+    </Box>
   );
 };
 

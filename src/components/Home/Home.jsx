@@ -87,12 +87,15 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar setMySearch={setMySearch} SearchMovie={SearchMovie} />
+      <Navbar 
+        setMySearch={setMySearch} 
+        SearchMovie={SearchMovie} 
+
+        setCalificationHome={setCalificationHome}
+        SearchCalification={SearchCalification}
+      />
       <IconButton>
-        <Calification
-          setCalificationHome={setCalificationHome}
-          SearchCalification={SearchCalification}
-        />
+
       </IconButton>
       <Container component="div" fixed>
         <CardContainer

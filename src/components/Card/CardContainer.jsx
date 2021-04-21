@@ -23,6 +23,8 @@ const CardContainer = ({ movies }) => {
               description={movie.overview}
               poster={movie.poster_path}
               id={movie.id}
+              vote={movie.vote_count}
+              average={movie.vote_average}
             />
           ))}
       </Container>
