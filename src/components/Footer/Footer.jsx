@@ -18,6 +18,7 @@ export default function Footer() {
             <a
               className={classes.link}
               target="_blank"
+              rel="noreferrer"
               href="https://www.linkedin.com/in/josetgp/"
             >
               © José Tomas González 2021
@@ -27,6 +28,7 @@ export default function Footer() {
             <a
               className={classes.link}
               target="_blank"
+              rel="noreferrer"
               href="https://github.com/JoseTomas-GP95/movie-city"
             >
               Repository on <GitHubIcon />

@@ -48,13 +48,13 @@ export const NewsCard2Demo = React.memo(function NewsCard2({
           </Box>
           <Typography className={styles.cta} variant={"overline"}>
             <Button variant="contained" color="secondary">
-              <a className={styles.link} target="_blank" href={originalUrl}>
+              <a className={styles.link} rel="noreferrer" target="_blank" href={originalUrl}>
                 Explore
               </a>
             </Button>
             {video ? (
-              <Button variant="contained" color="primary">
-                <a onClick={() => setIsOpen(true)}>Trailer</a>
+              <Button onClick={() => setIsOpen(true)} variant="contained" color="primary">
+                Trailer
               </Button>
             ) : null}
           </Typography>
